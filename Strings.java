@@ -37,6 +37,7 @@ public class Strings {
 		} else {
 			System.out.println("No");
 		}
+		captainCrunch("Hello");
 	}
 
 
@@ -102,5 +103,16 @@ public class Strings {
 		}
 		return false;
 	}
-	
+	public static String captainCrunch(String s) {
+		String end = "";
+		
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			char inCode = c + 13;
+			
+			end = end + inCode;
+		}
+		System.out.println(end);
+		return end;
+	}
 }
