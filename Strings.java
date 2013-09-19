@@ -88,5 +88,7 @@ public class Strings {
 		}
 		return true;
 	}
-	
+	public static boolean isDupledrome(String s) {
+		
+	}
 }
