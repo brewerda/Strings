@@ -10,8 +10,9 @@ public class Multi {
 						//sumTotal(a);
 						//reverseRow(a, 1);
 						//
-
-						snakeDraft(10,3);
+						int[] b = {1,2,3,4,5,6};
+						print(rectangularize(b,3,2));
+						//snakeDraft(10,3);
 	}
 	public void print(int[][] a) {
 		for (int r=0; r<a.length; r++) {
@@ -54,19 +55,29 @@ public class Multi {
 	public static void reverseCol(int[][] a) {
 			
 	}
-	public static int[][] snakeDraft(int players, int rounds) {
-		int[][] b = new int[players][rounds];
-		for (int r=0; r<= players; r++) {
-			int[players] = r;
-			for (int c=0; r<; ) {
-				
+	public static int[][] snakeDraft(int[] a, int players, int rounds) {
+		for (int r=0; r<a.length; r++) {
+			for (int c=0; c<a[r].length; c++) {
+				System.out.println(a[r][c] + " ");
 			}
-				
+			System.out.println();
 			
 		}
 			
 		}
 	}
-	public static int[][] rectangularize(int[] a, int rows, int cols)
+
+	public static int[][] rectangularize(int[] a, int rows, int cols) {
+		int[][] result = new int[rows][cols];
+
+		int counter = 0;
+		for (int i=0; i<result.length; i++) {
+			for (int j=0; j<result[i].length; j++) {
+				result[i][j] = a[counter];
+				counter++;
+			}
+		}
+		return result;
+	}
 
 }
