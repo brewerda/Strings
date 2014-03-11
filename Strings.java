@@ -31,6 +31,13 @@ public class Strings {
 		} else {
 			System.out.println("No");
 		}
+		
+		if (isDupledrome("llama")) {
+			System.out.println("Yes");
+		} else {
+			System.out.println("No");
+		}
+		captainCrunch("Hello");
 	}
 
 
@@ -89,6 +96,29 @@ public class Strings {
 		return true;
 	}
 	public static boolean isDupledrome(String s) {
+<<<<<<< HEAD
 		
 	}
 }
+=======
+		for(int i=0; i<s.length; i++) {
+			if(s.charAt(i) == s.chatAt(i+1) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public static String captainCrunch(String s) {
+		String end = "";
+		
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			char inCode = c + 13;
+			
+			end = end + inCode;
+		}
+		System.out.println(end);
+		return end;
+	}
+}
+>>>>>>> 81fc20d6ceff7756697c9e10991e8cc045781f22
