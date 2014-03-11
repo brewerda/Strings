@@ -11,7 +11,8 @@ public class Multi {
 						//reverseRow(a, 1);
 						//
 						int[] b = {1,2,3,4,5,6};
-						print(rectangularize(b,3,2));
+						System.out.println(snakeDraft(b,10,3));
+						System.out.println(rectangularize(b,3,2));
 						//snakeDraft(10,3);
 	}
 	public void print(int[][] a) {
@@ -22,39 +23,36 @@ public class Multi {
 			System.out.println();
 		}
 	}
-	public static void  sumRow(int[][] a, int y) {
-		int sumRow = 0;
-		for (int r=0; r<a[y].length; r++) {
-				sumRow = sumRow + a[y][r];
-		}
-		System.out.println(sumRow + " ");
-	}
-	public static void sumCol(int[][] a, int y) {
-		int sumCol = 0;
-		for (int r=0; r<a.length; r++) {
-				sumCol = sumCol + a[r][y];
-			}
-			System.out.println(sumCol + " ");
-	}
-	public static void sumTotal(int[][] a) {
-		int sum = 0;
-		for (int r=0; r<a.length; r++) {
-			for (int c=0; c<a[r].length; c++) {
-				sum = sum + a[r][c];
-			}
-		}
-		System.out.println(sum + " ");
-	}
-	public static void reverseRow(int[][] a, int y) {
+	// public static void  sumRow(int[][] a, int y) {
+	// 	int sumRow = 0;
+	// 	for (int r=0; r<a[y].length; r++) {
+	// 			sumRow = sumRow + a[y][r];
+	// 	}
+	// 	System.out.println(sumRow + " ");
+	// }
+	// public static void sumCol(int[][] a, int y) {
+	// 	int sumCol = 0;
+	// 	for (int r=0; r<a.length; r++) {
+	// 			sumCol = sumCol + a[r][y];
+	// 		}
+	// 		System.out.println(sumCol + " ");
+	// }
+	// public static void sumTotal(int[][] a) {
+	// 	int sum = 0;
+	// 	for (int r=0; r<a.length; r++) {
+	// 		for (int c=0; c<a[r].length; c++) {
+	// 			sum = sum + a[r][c];
+	// 		}
+	// 	}
+	// 	System.out.println(sum + " ");
+	// }
+	// public static void reverseRow(int[][] a, int y) {
 
-		for (int r= a.length + 1; r >= 0; r--) {
-			System.out.println(a[y][r] + " ");
-		}
+	// 	for (int r= a.length + 1; r >= 0; r--) {
+	// 		System.out.println(a[y][r] + " ");
+	// 	}
 		
-	}
-	public static void reverseCol(int[][] a) {
-			
-	}
+	// }
 	public static int[][] snakeDraft(int[] a, int players, int rounds) {
 		for (int r=0; r<a.length; r++) {
 			for (int c=0; c<a[r].length; c++) {
