@@ -2,9 +2,11 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		int[] test = {3,1,6,7,1,2};
+		int[] test1= {3,1,6,7,1,2};
+		int[] test2= {3,1,6,7,1,2};
 		int[] fixed = selection(test);
-		int[] fixed1 = insertion(test);
-		int[] fixed2 = bubble(test);
+		int[] fixed1 = insertion(test1);
+		int[] fixed2 = bubble(test2);
 
 		if(isSorted(fixed)) {
 			System.out.println("Selection");
@@ -20,44 +22,55 @@ public class Sorting {
 		}
 	}
 	public static int[] selection(int[] test) {
-		for (int i=0, j=test.length-1;i<test.length; i++,j--) {
-			for (int k=0;k<test.length ; k++) {
-				if(test[k] < test[i]) {
-					int first = test[i];
-					test[i] = test[k];
-					test[k] = first;
+		int placeHolder = 0;
+		for (int i=0;i<test.length; i++) {
+			int min = test[i];
+			for (int k=i;k<test.length ; k++) {
+				if(test[k] < min) {
+					min = test[k];
+					placeHolder = k;
 				}
+				
 			}
-			int second = test[i];
-			test[i] = test[j];
-			test[j] = second;
-			print(test);
+			int temp = test[placeHolder];
+			test[placeHolder] = test[i];
+			test[i] = temp;
+			//print(test);
 
 		}
 
 		return test;
 	}
-	public static int[] insertion(int[] test) {
-		for (int i=0; i<test.length-1; i++) {
-			if(test[i] > test[i+1]) {
-				int first = test[i];
-				test[i] = test[i+1];
-				test[i+1] = first;
+	public static int[] insertion(int[] test1) {
+		int min = 0;
+		for (int i=1; i<test1.length; i++) {
+			min = i;
+			for (int x=i-1; x>=0; x--) {
+				if(test1[i] < test1[x]) {
+					int holder = test1[x];
+					test1[x] = test1[i];
+					test1[i] = holder;
+				}
+				i--;
 			}
-
+			i = min;
+			//print(test1);
 		}
-		return test;
+		return test1;
 	}
-	public static int[] bubble(int[] test) {
-		for (int i=0; i<test.length-1; i++) {
-			if(test[i] > test[i+1]) {
-				int temp = test[i+1];
-				test[i+1] = test[i];
-				test[i] = temp; 
+	public static int[] bubble(int[] test2) {
+		for (int i=0; i<test2.length-1; i++) {
+			for (int x=0; x<test2.length-1; x++) {
+				
+			
+			if(test2[x] > test2[x+1]) {
+				int temp = test2[x+1];
+				test2[x+1] = test2[x];
+				test2[x] = temp; 
 			}
-
+			}
 		}
-		return test;
+		return test2;
 	}
 
 
